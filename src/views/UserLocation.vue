@@ -1,10 +1,6 @@
 <template>
-  <div class="center grid" id="user-location">
-     <vs-row>
-      <vs-col vs-type="flex" justify="center" align="center" w="12">
-        <FormLocation />
-      </vs-col>
-     </vs-row>
+  <div>
+    <FormLocation />
   </div>
 </template>
 
