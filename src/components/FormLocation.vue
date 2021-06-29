@@ -2,11 +2,11 @@
   <section class="ui two column centered grid">
     <div class="column">
       <form class="ui segment large form">
-        <div class="ui message red"></div>
+        <div class="ui message red" v-if="error"> {{ error }}</div>
         <div class="ui segment">
           <div class="field">
             <div class="ui right icon input large">
-              <input type="text" placeholder="Enter your address" />
+              <input v-model="address" type="text" placeholder="Enter your address" />
               <i class="dot circle link icon" @click="locatorButtonPressed"></i>
             </div>
           </div>
@@ -18,14 +18,24 @@
 </template>
 
 <script>
+import LocationApi from '@/services/api'
+
+const api = new LocationApi()
+
 export default {
+  data:() => ({
+    address: '',
+    error: ''
+  }),
   methods: {
     locatorButtonPressed() {
-      if(navigator.geolocation) {
+      if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           position => {
-            console.log(position.coords.latitude)
-            console.log(position.coords.longitude)
+            this.getAddressFrom(
+              position.coords.latitude,
+              position.coords.longitude
+            )
           },
 
           error => {
@@ -35,9 +45,22 @@ export default {
       } else {
         console.log('Your browser does not support geolocation API')
       }
-    }
-  }
-};
+    },
+
+    async getAddressFrom(lat, long) {
+      try {
+        const response = await api.get(lat, long)
+        if(response.status === 200 && response.data.results.length > 0) {
+          this.address = response.data.results[0].formatted_address
+        } else {
+          this.error = response.data.error_message
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
