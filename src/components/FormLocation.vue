@@ -7,7 +7,7 @@
           <div class="field">
             <div class="ui right icon input large">
               <input type="text" placeholder="Enter your address" />
-              <i class="circle icon"></i>
+              <i class="dot circle link icon" @click="locatorButtonPressed"></i>
             </div>
           </div>
           <button class="ui button">Go</button>
@@ -18,11 +18,31 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    locatorButtonPressed() {
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            console.log(position.coords.latitude)
+            console.log(position.coords.longitude)
+          },
+
+          error => {
+            console.log(error.message)
+          }
+        )
+      } else {
+        console.log('Your browser does not support geolocation API')
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.ui.button {
+.ui.button,
+.dot.circle.icon {
   background-color: #ff5a5f;
   color: white;
 }
