@@ -1,7 +1,5 @@
 <template>
-  <div>
     <FormLocation />
-  </div>
 </template>
 
 <script>
@@ -12,11 +10,4 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  #user-location {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
+<style lang="scss" scoped></style>
