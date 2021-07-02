@@ -3,9 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import dotenv from 'dotenv'
-dotenv.config()
-
 import '@/assets/css/main.css'
 
 Vue.config.productionTip = false

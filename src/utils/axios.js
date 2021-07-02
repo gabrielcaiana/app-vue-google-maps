@@ -1,5 +1,6 @@
 import axios from 'axios'
+import { API_URL } from '/public/config/config.json'
 
 export default axios.create({
-  baseURL: "https://maps.googleapis.com/maps/api/geocode/"
+  baseURL: API_URL
 })
