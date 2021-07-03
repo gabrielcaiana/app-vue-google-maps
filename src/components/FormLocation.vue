@@ -24,6 +24,7 @@
 
 <script>
 import LocationApi from '@/services/api'
+import { autocomplete } from '@/mixins/autocomplete.js'
 
 const api = new LocationApi()
 
@@ -34,11 +35,7 @@ export default {
     spinner: false
   }),
 
-  mounted() {   
-   new window.google.maps.places.Autocomplete( 
-     document.getElementById('autocomplete')
-   )
-  },
+  mixins: [autocomplete],
 
   methods: {
     locatorButtonPressed() {
