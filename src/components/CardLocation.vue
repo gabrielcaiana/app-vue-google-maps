@@ -13,12 +13,11 @@
                 v-model="address"
                 type="text"
                 placeholder="Enter your address"
-                id="autocomplete"
+                ref="autocomplete"
               />
               <i class="dot circle link icon" @click="locatorButtonPressed"></i>
             </div>
           </div>
-          <button class="ui button">Go</button>
         </div>
       </form>
     </div>
