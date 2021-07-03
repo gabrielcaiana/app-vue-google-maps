@@ -53,7 +53,7 @@ export default {
 
             this.$emit('latLng', {
               lat: position.coords.latitude,
-              long: position.coords.longitude,
+              lng: position.coords.longitude,
             })
           },
 
