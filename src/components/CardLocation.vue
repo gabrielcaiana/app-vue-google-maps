@@ -1,5 +1,5 @@
 <template>
-  <section class="ui two column centered grid">
+  <section id="card-location" class="ui two column centered grid">
     <div class="column">
       <form class="ui segment large form">
         <div class="ui message red" v-show="error">{{ error }}</div>
@@ -80,6 +80,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#card-location {
+  z-index: 1;
+  position: relative;
+  top: 1rem;
+}
+
 .ui.button,
 .dot.circle.icon {
   background-color: #ff5a5f;
