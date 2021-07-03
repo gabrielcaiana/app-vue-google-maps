@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'user-location',
-    component:() => import('@/views/UserLocation')
+    component:() => import('@/pages/UserLocation')
   }
 ]
 
