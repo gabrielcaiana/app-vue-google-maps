@@ -1,23 +1,25 @@
 <template>
-<<<<<<< HEAD
-    <div>
-      <CardLocation />
-      <Map />
-    </div>
-=======
-    <CardLocation />
->>>>>>> 458640613cba76b403f6e1af071b079bbac8a82a
+  <div>
+    <CardLocation @latLng="getLatLng($event)" />
+    <Map :location="location" />
+  </div>
 </template>
 
 <script>
-  export default {
-    components: {
-<<<<<<< HEAD
-      CardLocation:() => import('@/components/CardLocation'),
-      Map:() => import('@/components/Map')
-=======
-      CardLocation:() => import('@/components/CardLocation')
->>>>>>> 458640613cba76b403f6e1af071b079bbac8a82a
-    }
-  }
+export default {
+  components: {
+    CardLocation: () => import('@/components/CardLocation'),
+    Map: () => import('@/components/Map'),
+  },
+
+  data: () => ({
+    location: null,
+  }),
+
+  methods: {
+    getLatLng(event) {
+      this.location = event
+    },
+  },
+}
 </script>

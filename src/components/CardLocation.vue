@@ -1,11 +1,14 @@
 <template>
   <section id="card-location" class="ui two column centered grid">
     <div class="column">
-      <form class="ui segment large form">
+      <form @submit.prevent="locatorButtonPressed" class="ui segment large form">
         <div class="ui message red" v-show="error">{{ error }}</div>
         <div class="ui segment">
           <div class="field">
-            <div class="ui right icon input large" :class="{ loading: spinner }">
+            <div
+              class="ui right icon input large"
+              :class="{ loading: spinner }"
+            >
               <input
                 v-model="address"
                 type="text"
@@ -32,7 +35,7 @@ export default {
   data: () => ({
     address: '',
     error: '',
-    spinner: false
+    spinner: false,
   }),
 
   mixins: [autocomplete],
@@ -47,6 +50,11 @@ export default {
               position.coords.latitude,
               position.coords.longitude
             )
+
+            this.$emit('latLng', {
+              lat: position.coords.latitude,
+              long: position.coords.longitude,
+            })
           },
 
           error => {
