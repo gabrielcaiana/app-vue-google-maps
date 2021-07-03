@@ -24,7 +24,7 @@
 
 <script>
 import LocationApi from '@/services/api'
-import { autocomplete } from '@/mixins/autocomplete.js'
+import { autocomplete } from '@/mixins/autocomplete'
 
 const api = new LocationApi()
 
