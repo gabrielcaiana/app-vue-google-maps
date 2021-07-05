@@ -69,7 +69,7 @@ export default {
 
     async getAddressFrom(lat, long) {
       try {
-        const response = await api.get(lat, long)
+        const response = await api.getLocation(lat, long)
         if (response.status === 200 && response.data.results.length > 0) {
           this.address = response.data.results[0].formatted_address
           this.spinner = false
@@ -95,7 +95,7 @@ export default {
 
 .ui.button,
 .dot.circle.icon {
-  background-color: #ff5a5f;
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
 }
 </style>

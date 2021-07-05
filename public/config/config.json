@@ -1,4 +1,4 @@
 {
-  "API_URL": "https://maps.googleapis.com/maps/api/geocode/",
-  "GOOGLE_API_KEY": ""
+  "API_URL": "https://maps.googleapis.com/maps/api/",
+  "GOOGLE_API_KEY": "AIzaSyDuHhQv10LzPxrDla3XGZSB4Uc3RgaH0BY"
 }

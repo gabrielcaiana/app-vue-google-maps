@@ -6,8 +6,19 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/location'
+  },
+
+  {
+    path: '/location',
     name: 'user-location',
     component:() => import('@/pages/UserLocation')
+  },
+
+  {
+    path: '/places',
+    name: 'places',
+    component:() => import('@/pages/Places')
   }
 ]
 
