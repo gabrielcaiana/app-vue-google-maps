@@ -1,5 +1,5 @@
 <template>
-  <section id="card-location" class="ui two column centered grid">
+  <section id="card-location">
     <div class="column">
       <form @submit.prevent="locatorButtonPressed" class="ui segment large form">
         <div class="ui message red" v-show="error">{{ error }}</div>
@@ -91,6 +91,7 @@ export default {
   z-index: 1;
   position: relative;
   top: 1rem;
+  width: 100%;
 }
 
 .ui.button,

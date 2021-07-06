@@ -16,9 +16,9 @@ const routes = [
   },
 
   {
-    path: '/places',
-    name: 'places',
-    component:() => import('@/pages/Places')
+    path: '/close-buy',
+    name: 'close-buy',
+    component:() => import('@/pages/CloseBuy')
   }
 ]
 

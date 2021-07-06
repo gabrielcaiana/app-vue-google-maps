@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section class="container">
     <CardLocation @latLng="getLatLng($event)" />
     <Map :location="location" />
-  </div>
+  </section>
 </template>
 
 <script>
